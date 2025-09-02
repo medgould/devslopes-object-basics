@@ -23,6 +23,37 @@ const dominos = {
   },
   favorited: true,
   address: "123 Elm Street",
+  
   zipcode: 54321,
   acceptsReservations: true,
 };
+
+//console.log("Welcome to " + dominos.name + "!");
+
+// Write a function that prints out all of the keys in the object. 
+// You can use either a for...in loop or Object.keys() to get the keys.
+
+function printPizzaPlace(object) {
+   for (const key of Object.keys(dominos)) {
+     console.log(key,dominos[key]);
+    }
+}
+printPizzaPlace(dominos);
+
+//console.log("Our pizza toppings are:");
+
+printPizzaPlace(dominos.pizzaToppings);
+
+
+// calculateAverageRating 
+
+function calculateAverageRating(reviews) {
+  total = 0;
+  count = 0;  
+  for (const rating of Object.values(reviews)) {
+    total += rating;
+    count++;
+  }
+  return total / count;
+}
+console.log("Average:", calculateAverageRating(dominos.starReviews));
